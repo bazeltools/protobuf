@@ -166,6 +166,7 @@ def _write_descriptor_set(ctx, proto_info, deps, exports, descriptor_set):
 
     if ctx.attr._experimental_proto_descriptor_sets_include_source_info[BuildSettingInfo].value:
         args.add("--include_source_info")
+    print("KLUKAS: Skipping retain_options")
     # args.add("--retain_options")
 
     strict_deps = ctx.attr._strict_proto_deps[BuildSettingInfo].value
@@ -208,6 +209,7 @@ def _write_descriptor_set(ctx, proto_info, deps, exports, descriptor_set):
             )
     if proto_common.INCOMPATIBLE_ENABLE_PROTO_TOOLCHAIN_RESOLUTION:
         toolchain = ctx.toolchains[toolchains.PROTO_TOOLCHAIN]
+        print("KLUKAS: using custom toolchain for key %s: %s" % (toolchains.PROTO_TOOLCHAIN, toolchain))
         if not toolchain:
             fail("Protocol compiler toolchain could not be resolved.")
         proto_lang_toolchain_info = toolchain.proto
