@@ -52,6 +52,7 @@ def _py_proto_aspect_impl(target, ctx):
 
     if proto_common.INCOMPATIBLE_ENABLE_PROTO_TOOLCHAIN_RESOLUTION:
         toolchain = ctx.toolchains[_PY_PROTO_TOOLCHAIN]
+        print("KLUKAS: using custom python toolchain for key %s: %s" % (toolchains.PROTO_TOOLCHAIN, toolchain))
         if not toolchain:
             fail("No toolchains registered for '%s'." % _PY_PROTO_TOOLCHAIN)
         proto_lang_toolchain_info = toolchain.proto
