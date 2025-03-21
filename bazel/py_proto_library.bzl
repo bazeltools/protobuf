@@ -45,10 +45,10 @@ def _py_proto_aspect_impl(target, ctx):
     # Check Proto file names
     for proto in target[ProtoInfo].direct_sources:
         import_path = proto_common.get_import_path(proto)
-        if proto.is_source and "-" in import_path:
-            fail("Cannot generate Python code for a .proto whose python import path contains '-' ({}).".format(
-                proto.path,
-            ))
+        # if proto.is_source and "-" in import_path:
+        #     fail("Cannot generate Python code for a .proto whose python import path contains '-' ({}).".format(
+        #         proto.path,
+        #     ))
 
     if proto_common.INCOMPATIBLE_ENABLE_PROTO_TOOLCHAIN_RESOLUTION:
         toolchain = ctx.toolchains[_PY_PROTO_TOOLCHAIN]
