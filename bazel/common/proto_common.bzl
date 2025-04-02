@@ -159,7 +159,7 @@ def _compile(
       experimental_output_files: (str) Overwrites output_files from the toolchain.
         Don't use this parameter. It's only intended for the transition.
     """
-    print("KLUKAS: compile args: %s; %s; %s" % (proto_lang_toolchain_info, additional_args, additional_proto_lang_toolchain_info))
+    # print("KLUKAS: compile args: %s; %s; %s" % (proto_lang_toolchain_info, additional_args, additional_proto_lang_toolchain_info))
     if type(generated_files) != type([]):
         fail("generated_files is expected to be a list of Files")
     if not generated_files:
