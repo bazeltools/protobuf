@@ -209,7 +209,7 @@ def _write_descriptor_set(ctx, proto_info, deps, exports, descriptor_set):
             )
     if proto_common.INCOMPATIBLE_ENABLE_PROTO_TOOLCHAIN_RESOLUTION:
         toolchain = ctx.toolchains[toolchains.PROTO_TOOLCHAIN]
-        print("KLUKAS: using custom toolchain for key %s: %s" % (toolchains.PROTO_TOOLCHAIN, toolchain))
+        # print("KLUKAS: using custom toolchain for key %s: %s" % (toolchains.PROTO_TOOLCHAIN, toolchain))
         if not toolchain:
             fail("Protocol compiler toolchain could not be resolved.")
         proto_lang_toolchain_info = toolchain.proto
