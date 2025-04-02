@@ -46,7 +46,7 @@ def _py_proto_aspect_impl(target, ctx):
     for proto in target[ProtoInfo].direct_sources:
         import_path = proto_common.get_import_path(proto)
         if proto.is_source and "-" in import_path:
-            warn("Allowing to generate Python code for a .proto whose python import path contains '-' ({}).".format(
+            print("Allowing to generate Python code for a .proto whose python import path contains '-' ({}).".format(
                 proto.path,
             ))
 
